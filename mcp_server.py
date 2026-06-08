@@ -8,7 +8,7 @@ from starlette.middleware.authentication import AuthenticationMiddleware
 
 import httpx
 from dotenv import load_dotenv
-from fastmcp import FastMCP
+from fastmcp.server import FastMCP
 from fastmcp.prompts.prompt import PromptMessage, TextContent
 from starlette.requests import Request
 from starlette.responses import PlainTextResponse
@@ -467,8 +467,6 @@ from pydantic import RootModel
 from pydantic import BaseModel
 from typing import Dict
 
-class NepseIndex(BaseModel):
-    __root__: Dict[str, IndexData]
 class AllIndices(RootModel[Dict[str, IndexData]]):
     pass
 
