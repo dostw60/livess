@@ -464,9 +464,11 @@ class IndexData(BaseModel):
 
 from pydantic import RootModel
 
-class NepseIndex(RootModel[Dict[str, IndexData]]):
-    pass
+from pydantic import BaseModel
+from typing import Dict
 
+class NepseIndex(BaseModel):
+    __root__: Dict[str, IndexData]
 class AllIndices(RootModel[Dict[str, IndexData]]):
     pass
 
